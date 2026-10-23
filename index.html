@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main>
+        <section>
+            <div class="hero">
+                <div class="hero_text">
+                    <div class="hero_title">Paste the link here</div>
+
+                    <form id="fetchForm">
+                        <div class="search">
+                            <input id="videoUrl" type="url" placeholder="Paste..." autocomplete="url" required>
+                        </div>
+                        <button class="fetch_btn" id="fetchBtn" type="submit">
+                            <span id="fetchBtnText">Fetch</span>
+                            <span class="spinner" id="fetchSpinner" hidden></span>
+                        </button>
+                    </form>
+
+                    <p class="status" id="status" aria-live="polite"></p>
+
+                    <div class="results" id="results" hidden>
+                        <div class="result_title">Choose quality</div>
+                        <div class="video_title" id="videoTitle"></div>
+                        <img class="thumbnail" id="thumbnail" alt="Video thumbnail" hidden>
+
+                        <label class="quality_label" for="quality">Format</label>
+                        <select id="quality"></select>
+
+                        <button class="download_btn" id="downloadBtn" type="button">
+                            <span id="downloadBtnText">Download</span>
+                            <span class="spinner spinner_dark" id="downloadSpinner" hidden></span>
+                        </button>
+
+                        <div class="progress" id="progressWrap" hidden>
+                            <div class="progress_track" id="progressTrack" role="progressbar"
+                                 aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
+                                 aria-label="Download progress">
+                                <div class="progress_fill" id="progressFill"></div>
+                            </div>
+                            <div class="progress_info">
+                                <span class="progress_percent" id="progressPercent">0%</span>
+                                <span class="progress_detail" id="progressDetail"></span>
+                            </div>
+                        </div>
+
+                        <p class="download_message" id="downloadMessage" aria-live="polite"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
